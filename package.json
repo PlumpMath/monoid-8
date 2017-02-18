@@ -6,6 +6,11 @@
   "repository": "git@github.com:nishaya/monoid.git",
   "author": "nishaya <nishaya@users.noreply.github.com>",
   "license": "MIT",
+  "scripts" : {
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint . --ext .js,.jsx --cache --fix"
+  },
   "dependencies": {
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
