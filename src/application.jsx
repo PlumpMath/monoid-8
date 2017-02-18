@@ -5,7 +5,7 @@ import createLogger from 'redux-logger'
 import { Provider } from 'react-redux'
 import IndexComponent from 'components/index'
 import reducers from 'reducers/index'
-import persistState from 'redux-localstorage'
+// import persistState from 'redux-localstorage'
 
 // http://www.material-ui.com/#/
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -15,7 +15,7 @@ import monoidTheme from 'styles/monoid_theme'
 import applicationStyle from './application.scss'
 
 const createPersistentStore = compose(
-  persistState('midiInput'),
+//  persistState('midiInput'),
 )(createStore)
 
 injectTapEventPlugin()

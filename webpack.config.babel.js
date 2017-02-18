@@ -29,7 +29,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-      { test: /application\.s[ac]ss$/, loaders: ['style', 'css', 'sass'] },
+      { test: /application\.s[ac]ss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
   devServer: {
