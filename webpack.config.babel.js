@@ -2,8 +2,6 @@ import webpack from 'webpack'
 import path from 'path'
 import config from 'config'
 
-console.log(process.env.NODE_ENV)
-
 const plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
@@ -17,6 +15,8 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
+console.log(plugins)
+
 module.exports = {
   entry: './src/application.jsx',
   output: {
@@ -25,12 +25,12 @@ module.exports = {
   },
   plugins,
   resolve: {
-    root: [path.resolve('./'), path.resolve('./src')],
-    extensions: ['', '.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.js', '.jsx'],
   },
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel'] },
+      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
       { test: /application\.s[ac]ss$/, loaders: ['style', 'css', 'sass'] },
     ],
   },
