@@ -26,7 +26,7 @@ const middlewares = process.env.NODE_ENV === 'development' ?
 const store = createPersistentStore(reducers, middlewares)
 
 render((<Provider store={store}>
-  <MuiThemeProvider muiTheme={getMuiTheme(reaktTheme)}>
+  <MuiThemeProvider muiTheme={getMuiTheme(monoidTheme)}>
     <IndexComponent />
   </MuiThemeProvider>
 </Provider>), document.getElementById('app'))

@@ -1,4 +1,4 @@
-import lightBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 
 export default {
   ...darkBaseTheme,
