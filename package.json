@@ -1,0 +1,9 @@
+{
+  "name": "monoid",
+  "version": "1.0.0",
+  "description": "Monophonic Web Synthesizer",
+  "main": "index.js",
+  "repository": "git@github.com:nishaya/monoid.git",
+  "author": "nishaya <nishaya@users.noreply.github.com>",
+  "license": "MIT"
+}
