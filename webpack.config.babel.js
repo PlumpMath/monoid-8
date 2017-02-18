@@ -15,12 +15,10 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-console.log(plugins)
-
 module.exports = {
   entry: './src/application.jsx',
   output: {
-    path: './docs',
+    path: path.resolve(__dirname, 'docs'),
     filename: 'application.js',
   },
   plugins,
