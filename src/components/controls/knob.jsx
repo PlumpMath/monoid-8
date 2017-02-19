@@ -11,7 +11,12 @@ export default class Knob extends Component {
 
   rotate(amount, target) {
     console.log(amount, target)
-    const rotation = this.state.rotation + amount
+    let rotation = this.state.rotation + amount
+    if (rotation < -120) {
+      rotation = -120
+    } else if (rotation > 120) {
+      rotation = 120
+    }
     this.setState({ rotation })
   }
 
@@ -30,7 +35,6 @@ export default class Knob extends Component {
           <div className={style.cursor} />
         </div>
       </div>
-      knob
     </div>)
   }
 }
