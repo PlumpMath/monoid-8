@@ -1,23 +1,43 @@
-import React, { Component, PropType } from 'react'
+import React, { Component, PropTypes } from 'react'
 import style from './knob.scss'
 
 export default class Knob extends Component {
+  static MIN_ROTATION = -120
+  static MAX_ROTATION = 120
+
+  static propTypes = {
+    min: PropTypes.number,
+    max: PropTypes.number,
+    step: PropTypes.number,
+  }
+
+  static defaultProps = {
+    min: 0,
+    max: 127,
+    step: 1.0,
+  }
+
   constructor(props) {
     super(props)
     this.state = {
+      value: 0,
       rotation: -120,
     }
   }
 
-  rotate(amount, target) {
-    console.log(amount, target)
+  rotate(amount) {
     let rotation = this.state.rotation + amount
     if (rotation < -120) {
       rotation = -120
     } else if (rotation > 120) {
       rotation = 120
     }
-    this.setState({ rotation })
+
+    const rRange = Knob.MAX_ROTATION - Knob.MIN_ROTATION
+    const r = (rotation - Knob.MIN_ROTATION) / rRange
+    let value = (this.props.max - this.props.min) * r + this.props.min
+    value = Math.round(value / this.props.step) * this.props.step
+    this.setState({ rotation, value })
   }
 
   render() {
@@ -25,7 +45,7 @@ export default class Knob extends Component {
       <div className={style.body}>
         <div
           onWheel={(e) => {
-            this.rotate(e.deltaY, e.target)
+            this.rotate(e.deltaY)
           }}
           style={{
             transform: `rotate(${this.state.rotation}deg)`,
@@ -35,6 +55,7 @@ export default class Knob extends Component {
           <div className={style.cursor} />
         </div>
       </div>
+      {this.state.value}
     </div>)
   }
 }

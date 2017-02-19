@@ -12,7 +12,8 @@ export default class IndexComponent extends Component {
       </div>
       <Card>
         <CardText>
-          empty
+          <Knob />
+          <Knob />
           <Knob />
         </CardText>
       </Card>
