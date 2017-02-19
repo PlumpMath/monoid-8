@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card, CardText } from 'material-ui/Card'
 
+import Knob from 'components/controls/knob'
+
 export default class IndexComponent extends Component {
   render() {
     return (<div>
@@ -11,6 +13,7 @@ export default class IndexComponent extends Component {
       <Card>
         <CardText>
           empty
+          <Knob />
         </CardText>
       </Card>
     </div>)
