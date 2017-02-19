@@ -9,6 +9,7 @@ export default class Knob extends Component {
     min: PropTypes.number,
     max: PropTypes.number,
     step: PropTypes.number,
+    label: PropTypes.string,
   }
 
   static defaultProps = {
@@ -42,6 +43,8 @@ export default class Knob extends Component {
 
   render() {
     return (<div className={style.container}>
+      {this.props.label ?
+        (<div className={style.label}>{this.props.label}</div>) : null}
       <div className={style.body}>
         <div
           onWheel={(e) => {
