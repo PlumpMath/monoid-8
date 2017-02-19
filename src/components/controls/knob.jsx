@@ -27,10 +27,10 @@ export default class Knob extends Component {
 
   rotate(amount) {
     let rotation = this.state.rotation + amount
-    if (rotation < -120) {
-      rotation = -120
-    } else if (rotation > 120) {
-      rotation = 120
+    if (rotation < Knob.MIN_ROTATION) {
+      rotation = Knob.MIN_ROTATION
+    } else if (rotation > Knob.MAX_ROTATION) {
+      rotation = Knob.MAX_ROTATION
     }
 
     const rRange = Knob.MAX_ROTATION - Knob.MIN_ROTATION
