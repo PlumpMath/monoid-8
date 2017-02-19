@@ -29,7 +29,15 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-      { test: /\.s[ac]ss$/, exclude: /application\.s[ac]ss$/, loaders: ['style-loader', 'css-loader?modules&camelCase=dashes', 'sass-loader'] },
+      {
+        test: /\.s[ac]ss$/,
+        exclude: /application\.s[ac]ss$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&camelCase=dashes&localIdentName=monoid-[name]__[local]-[hash:base64:8]',
+          'sass-loader',
+        ],
+      },
       { test: /application\.s[ac]ss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
