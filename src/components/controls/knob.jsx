@@ -11,6 +11,7 @@ export default class Knob extends Component {
     step: PropTypes.number,
     label: PropTypes.string,
     showValue: PropTypes.bool,
+    unit: PropTypes.string,
   }
 
   static defaultProps = {
@@ -19,6 +20,7 @@ export default class Knob extends Component {
     step: 1.0,
     label: null,
     showValue: false,
+    unit: null,
   }
 
   constructor(props) {
@@ -62,7 +64,9 @@ export default class Knob extends Component {
         </div>
       </div>
       {this.props.showValue ?
-        (<div className={style.valuePreview}>{this.state.value}</div>) : null}
+        (<div className={style.valuePreview}>
+          {this.state.value} {this.props.unit}
+        </div>) : null}
     </div>)
   }
 }
