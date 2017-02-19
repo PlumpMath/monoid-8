@@ -10,12 +10,15 @@ export default class Knob extends Component {
     max: PropTypes.number,
     step: PropTypes.number,
     label: PropTypes.string,
+    showValue: PropTypes.bool,
   }
 
   static defaultProps = {
     min: 0,
     max: 127,
     step: 1.0,
+    label: null,
+    showValue: false,
   }
 
   constructor(props) {
@@ -58,7 +61,8 @@ export default class Knob extends Component {
           <div className={style.cursor} />
         </div>
       </div>
-      {this.state.value}
+      {this.props.showValue ?
+        (<div className={style.valuePreview}>{this.state.value}</div>) : null}
     </div>)
   }
 }
