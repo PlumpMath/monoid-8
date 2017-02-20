@@ -38,7 +38,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s?[ac]ss$/,
         exclude: /application\.s[ac]ss$/,
         loaders: [
           'react-hot-loader',

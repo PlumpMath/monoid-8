@@ -14,6 +14,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import monoidTheme from 'styles/monoid_theme'
 import applicationStyle from './application.scss'
 
+import 'antd/dist/antd.css'
+
+
 const createPersistentStore = compose(
 //  persistState('midiInput'),
 )(createStore)
