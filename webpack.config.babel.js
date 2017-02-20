@@ -48,10 +48,8 @@ module.exports = {
       {
         test: /\.less$/,
         loaders: [
-          'react-hot-loader',
           'style-loader',
           'css-loader',
-          // 'less-loader',
           `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`,
         ],
       },
