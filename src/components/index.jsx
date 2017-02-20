@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardText } from 'material-ui/Card'
-import crypto from 'crypto'
 
 import Knob from 'components/controls/knob'
-
-const id = crypto.randomBytes(20).toString('hex');
-console.log(id)
-
 
 export default class IndexComponent extends Component {
   render() {
