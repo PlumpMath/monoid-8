@@ -7,6 +7,7 @@ const plugins = [
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     PORT_CONFIG: JSON.stringify(config),
   }),
+  new webpack.HotModuleReplacementPlugin(),
 ]
 
 if (process.env.NODE_ENV === 'production') {
@@ -28,20 +29,37 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: [
+          'react-hot-loader',
+          'babel-loader',
+        ],
+      },
       {
         test: /\.s[ac]ss$/,
         exclude: /application\.s[ac]ss$/,
         loaders: [
+          'react-hot-loader',
           'style-loader',
           'css-loader?modules&camelCase=dashes&localIdentName=monoid-[name]__[local]-[hash:base64:8]',
           'sass-loader',
         ],
       },
-      { test: /application\.s[ac]ss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /application\.s[ac]ss$/,
+        loaders: [
+          'react-hot-loader',
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   devServer: {
+    hot: true,
     contentBase: './docs',
     port: config.WEBPACK_DEV_SERVER_PORT || 8080,
     historyApiFallback: true,
