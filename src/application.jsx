@@ -10,12 +10,8 @@ import reducers from 'reducers/index'
 // http://www.material-ui.com/#/
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import monoidTheme from 'styles/monoid_theme'
+import antdStyle from 'antd/dist/antd.css'
 import applicationStyle from './application.scss'
-
-import 'antd/dist/antd.css'
-
 
 const createPersistentStore = compose(
 //  persistState('midiInput'),
@@ -29,7 +25,7 @@ const middlewares = process.env.NODE_ENV === 'development' ?
 const store = createPersistentStore(reducers, middlewares)
 
 render((<Provider store={store}>
-  <MuiThemeProvider muiTheme={getMuiTheme(monoidTheme)}>
+  <MuiThemeProvider>
     <IndexComponent />
   </MuiThemeProvider>
 </Provider>), document.getElementById('app'))
