@@ -5,7 +5,6 @@ import createLogger from 'redux-logger'
 import { Provider } from 'react-redux'
 import IndexComponent from 'components/index'
 import reducers from 'reducers/index'
-import antdStyle from 'antd/dist/antd.css'
 import applicationStyle from './application.scss'
 
 const createPersistentStore = compose(

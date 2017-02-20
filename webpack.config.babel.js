@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 import config from 'config'
+import theme from './theme.js'
 
 const plugins = [
   new webpack.DefinePlugin({
@@ -50,7 +51,8 @@ module.exports = {
           'react-hot-loader',
           'style-loader',
           'css-loader',
-          'less-loader',
+          // 'less-loader',
+          `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`,
         ],
       },
       {
