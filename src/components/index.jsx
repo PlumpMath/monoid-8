@@ -16,18 +16,18 @@ export default class IndexComponent extends Component {
         <Knob label="param3" showValue />
       </Card>
       <div style={{ background: '#ECECEC', padding: '30px' }}>
-    <Row>
-      <Col span="8">
-        <Card title="Card title" bordered={false}>Card content</Card>
-      </Col>
-      <Col span="8">
-        <Card title="Card title" bordered={false}>Card content</Card>
-      </Col>
-      <Col span="8">
-        <Card title="Card title" bordered={false}>Card content</Card>
-      </Col>
-    </Row>
-  </div>
+        <Row>
+          <Col span="8">
+            <Card title="Card title #1" bordered>Card content</Card>
+          </Col>
+          <Col span="8">
+            <Card title="Card title #2" bordered={false}>Card content</Card>
+          </Col>
+          <Col span="8">
+            <Card title="Card title" bordered={false}>Card content</Card>
+          </Col>
+        </Row>
+      </div>
     </div>)
   }
 }

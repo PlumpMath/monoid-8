@@ -38,7 +38,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.s?[ac]ss$/,
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.s[ac]ss$/,
         exclude: /application\.s[ac]ss$/,
         loaders: [
           'react-hot-loader',
